@@ -4,7 +4,7 @@ import SignInTab from '../components/SigninTab'
 
 const SignInPage = () => {
     return (
-        <div className='flex max-w-6xl w-full gap-1 min-h-screen'>
+        <div className='flex w-screen gap-1 min-h-screen mx-auto'>
             <SignInDash />
             <SignInTab/>
         </div>
