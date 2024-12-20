@@ -54,14 +54,14 @@ const LogInOption = ({ tabChange }) => {
     return (
         !tabChange ?
             SAAS.map((op) => (
-                <Link to={`/${op.url}/${op.id}`} state={op.id} className='max-w-sm w-full flex items-center gap-2 justify-center p-3 rounded-lg min-h-14 shadow-lg shadow-slate-300'>
+                <Link to={`/${op.url}/${op.id}`} state={op.id} key={op.title} className='max-w-sm w-full hover:bg-slate-300  flex items-center gap-2 justify-center p-3 rounded-lg min-h-14 shadow-lg shadow-slate-300'>
                     <img src={op.logo} alt={'logo'} />
                     <p>{op.title}</p>
                 </Link>
             ))
             :
             SelfHosted.map((op) => (
-                <Link to={`/${op.url}/${op.id}`} state={op.id} className='max-w-sm w-full flex items-center gap-2 justify-center  p-3 rounded-lg min-h-14 shadow-lg shadow-slate-300'>
+                <Link to={`/${op.url}/${op.id}`} key={op.title} state={op.id} className='max-w-sm w-full hover:bg-slate-300  flex items-center gap-2 justify-center  p-3 rounded-lg min-h-14 shadow-lg shadow-slate-300'>
                     <img src={op.logo} alt={'logo'} />
                     <p>{op.title}</p>
                 </Link>

@@ -9,7 +9,7 @@ const SignInTab = () => {
   const [dirChange, setdirChange] = useState(false)
 
   return (
-    <div className="md:w-[50%] w-full flex-center relative mx-auto bg-slate-50">
+    <div className="md:w-[50%] w-full flex-center flex-col relative mx-auto bg-slate-50">
       <div className="max-w-xl rounded-xl bg-white w-full min-h-[550px] shadow-sm shadow-slate-500 mx-auto px-6 py-9 flex items-center flex-col">
         <div className='flex-center w-full gap-2'>
           <img src={Logo} alt="logo" />
@@ -18,7 +18,7 @@ const SignInTab = () => {
         <h1 className='text-3xl font-semibold mt-9'>Welcome to CodeAnt AI</h1>
         <div
           onClick={() => setdirChange(!dirChange)}
-          className={`w-full min-h-14 h-full mt-5 flex relative bg-slate-200 rounded-xl ${(!dirChange ? 'active-left' : 'active-right')}`}>
+          className={`w-full min-h-14 mt-5 flex relative bg-slate-200 rounded-xl ${(!dirChange ? 'active-left' : 'active-right')}`}>
           <Button
             key={1}
             text={'SAAS'}
@@ -33,6 +33,7 @@ const SignInTab = () => {
             <LogInOption tabChange={dirChange}/>
         </div>
       </div>
+      <h2 className='mt-4 text-sm'>By signing up you agree to the <b>Privacy Policy</b>.</h2>
     </div>
   )
 }
