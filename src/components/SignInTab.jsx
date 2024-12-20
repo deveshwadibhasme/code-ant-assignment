@@ -1,7 +1,8 @@
+import { useState } from 'react'
+import LogInOption from './LogInOption'
 import Logo from '../assets/logo-pack/logo-small.svg'
 import codeAnt from '../assets/logo-pack/CodeAntAI.svg'
 import Button from './Button'
-import { useState } from 'react'
 
 const SignInTab = () => {
 
@@ -17,15 +18,19 @@ const SignInTab = () => {
         <h1 className='text-3xl font-semibold mt-9'>Welcome to CodeAnt AI</h1>
         <div
           onClick={() => setdirChange(!dirChange)}
-          className={`w-full min-h-14 h-full mt-5 flex relative active-btn transition-all after:${dirChange?'left':'right'}-0`}>
+          className={`w-full min-h-14 h-full mt-5 flex relative bg-slate-200 rounded-xl ${(!dirChange ? 'active-left' : 'active-right')}`}>
           <Button
             key={1}
             text={'SAAS'}
-            styling={'w-[50%] text-xl font-semibold rounded-xl'} />
+            styling={`w-[50%] text-xl font-semibold rounded-xl ${(!dirChange ? 'text-white' : 'text-black')}`} />
           <Button
             key={2}
             text={'Self Hosted'}
-            styling={'w-[50%] text-xl font-semibold rouded-xl'} />
+            styling={`w-[50%] text-xl font-semibold rouded-xl ${(!dirChange ? 'text-black' : 'text-white')}`} />
+        </div>
+        <hr/>
+        <div className='flex flex-col mt-5'>
+            <LogInOption tabChange={dirChange}/>
         </div>
       </div>
     </div>
