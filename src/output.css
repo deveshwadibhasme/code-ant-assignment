@@ -591,20 +591,16 @@ video {
   margin-left: auto;
 }
 
+.mt-4 {
+  margin-top: 1rem;
+}
+
 .mt-5 {
   margin-top: 1.25rem;
 }
 
 .mt-9 {
   margin-top: 2.25rem;
-}
-
-.mt-2 {
-  margin-top: 0.5rem;
-}
-
-.mt-4 {
-  margin-top: 1rem;
 }
 
 .flex {
@@ -689,6 +685,10 @@ video {
 
 .w-screen {
   width: 100vw;
+}
+
+.max-w-60 {
+  max-width: 15rem;
 }
 
 .max-w-\[270px\] {

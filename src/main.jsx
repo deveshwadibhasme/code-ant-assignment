@@ -3,16 +3,27 @@ import './output.css'
 import App from './App.jsx'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import MainScreen from './pages/MainScreen.jsx'
+import SignInPage from './pages/SignInPage.jsx'
 
 
 const routes = createBrowserRouter([
   {
     path: '/',
-    element: <App />,
+    element:<SignInPage/>,
   },
   {
     path: '/:signin/:id',
-    element: <MainScreen/>,
+    element: <App />,
+    children:[
+      {
+        path:'/:signin/:id/',
+        element:<MainScreen />
+      },
+      {
+        path:'/:signin/:id/repository',
+        element:<MainScreen />
+      }
+    ]
   },
 ]
 )
