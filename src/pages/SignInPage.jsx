@@ -1,6 +1,6 @@
 import React from 'react'
 import SignInDash from '../components/SignInDash'
-import SignInTab from '../components/SigninTab'
+import SignInTab from '../components/SignInTab'
 
 const SignInPage = () => {
     return (
