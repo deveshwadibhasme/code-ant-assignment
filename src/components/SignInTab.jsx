@@ -29,7 +29,7 @@ const SignInTab = () => {
             styling={`w-[50%] text-xl font-semibold rouded-xl ${(!dirChange ? 'text-black' : 'text-white')}`} />
         </div>
         <hr/>
-        <div className='flex flex-col mt-5'>
+        <div className='flex flex-col mt-5 items-center w-full gap-4'>
             <LogInOption tabChange={dirChange}/>
         </div>
       </div>

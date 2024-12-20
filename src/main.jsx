@@ -10,8 +10,8 @@ const routes = createBrowserRouter([
     element: <App />,
   },
   {
-    path: '/home',
-    element: <h1>About</h1>,
+    path: '/:signin/:id',
+    element: <h1>Welcome</h1>,
   },
 ]
 )
