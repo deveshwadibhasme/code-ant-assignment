@@ -26,4 +26,11 @@
   .bg-blue-800{
     background-color:#1570EF;
   }
+    /* responsive */
+    .bottom-full{
+      bottom:100%;
+    }
+    .top-16{
+      top:64px;
+    }
 }

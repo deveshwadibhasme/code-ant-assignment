@@ -10,7 +10,7 @@ const AddRepo = ({ addRepo }) => {
             <div className='flex justify-between w-full max-w-72 gap-2'>
                 <button
                     className="max-w-36 px-3 w-full h-9 border-1 border-slate-400 text-black font-semibold text-sm rounded-lg hover:bg-green-300">
-                    &#128472;
+                    &#10227;
                     Refresh All
                 </button>
                 <button
