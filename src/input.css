@@ -3,6 +3,9 @@
 @tailwind utilities;
 
 @layer {
+  #root{
+    overflow-x: hidden
+  }
   .flex-center {
     @apply flex justify-center items-center;
   }

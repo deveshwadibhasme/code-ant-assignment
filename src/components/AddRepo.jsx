@@ -2,7 +2,7 @@ import React from 'react'
 
 const AddRepo = ({ addRepo }) => {
     return (
-        <div className='w-full flex justify-between'>
+        <div className='w-full flex flex-col md:flex-row justify-between gap-y-4'>
             <h2 className="font-semibold text-2xl">
                 Repository
                 <span className="block text-sm font-normal text-slate-500">__ total repositories</span>

@@ -10,7 +10,7 @@ function App() {
 
   return (
     (UniqueId === state) ?
-      <div className='flex w-screen min-h-screen mx-auto bg-slate-50'>
+      <div className='flex flex-col md:flex-row w-screen min-h-screen mx-auto bg-slate-50'>
         <SideBarMenu />
         <Outlet />
       </div> : <> {alert('Not Authenticate')} <div>Not Authenticate</div></>
