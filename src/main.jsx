@@ -39,6 +39,10 @@ const routes = createBrowserRouter([
         path:'/:signin/:id/settings',
         element:<h1 className='text-center'>Settings</h1>,
       },
+      {
+        path:'/:signin/:id/support',
+        element:<h1 className='text-center'>Support</h1>,
+      },
     ]
   },
 ]
