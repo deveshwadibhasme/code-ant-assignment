@@ -12,17 +12,29 @@ const routes = createBrowserRouter([
     element:<SignInPage/>,
   },
   {
-    path: '/:signin/:id',
+    path: '/:signin/:id/',
     element: <App />,
     children:[
       {
-        path:'/:signin/:id/',
+        path:'/:signin/:id/:repo',
         element:<MainScreen />
       },
       {
-        path:'/:signin/:id/repository',
-        element:<MainScreen />
-      }
+        path:'/:signin/:id/AICodeReviewer',
+        element:<h1 className='text-center'>AI Code Reviewer</h1>,
+      },
+      {
+        path:'/:signin/:id/CloudSecurity',
+        element:<h1 className='text-center'>Cloud Security</h1>,
+      },
+      {
+        path:'/:signin/:id/howtouse',
+        element:<h1 className='text-center'>How to Use</h1>,
+      },
+      {
+        path:'/:signin/:id/settings',
+        element:<h1 className='text-center'>Settings</h1>,
+      },
     ]
   },
 ]
