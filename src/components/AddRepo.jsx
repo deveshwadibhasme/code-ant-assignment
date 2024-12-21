@@ -1,4 +1,5 @@
-import React from 'react'
+import Refresh from '../assets/icon-pack/refresh.svg'
+import Plus from '../assets/icon-pack/plus.svg'
 
 const AddRepo = ({ addRepo }) => {
     return (
@@ -9,14 +10,14 @@ const AddRepo = ({ addRepo }) => {
             </h2>
             <div className='flex justify-between w-full max-w-72 gap-2'>
                 <button
-                    className="max-w-36 px-3 w-full h-9 border-1 border-slate-400 text-black font-semibold text-sm rounded-lg hover:bg-green-300">
-                    &#10227;
+                    className="max-w-36 px-3 w-full h-9 border-1 border-slate-400 text-black font-semibold text-sm rounded-lg hover:bg-green-300 flex-center gap-2">
+                    <img className="h-5" src={Refresh} alt="refresh"/>
                     Refresh All
                 </button>
                 <button
                     onClick={addRepo}
-                    className="max-w-36 px-3 w-full h-9 bg-blue-500 text-white font-semibold text-sm rounded-lg  hover:bg-slate-400 hover:text-black border-1 border-blue-800">
-                    &#x2B;
+                    className="max-w-36 px-3 w-full h-9 bg-blue-500 text-white font-semibold text-sm rounded-lg  hover:bg-slate-400 hover:text-black border-1 border-blue-800 flex-center">
+                    <img className="h-4" src={Plus} alt="&#x2B;"/>
                     Add Repository
                 </button>
             </div>
