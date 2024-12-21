@@ -24,17 +24,16 @@ const Repository = [
         id: 4,
         repoName: 'portfolio-site',
         visibility: false,
-        majorCode: 'HTML-CSS',
+        majorCode: 'CSS',
         size: 3445,
     },
     {
         id: 5,
         repoName: 'task-manager',
         visibility: true,
-        majorCode: 'Vue.js',
+        majorCode: 'Angular.js',
         size: 8762,
-    }
-    
+    },
 ]
 
 export default Repository

@@ -1,5 +1,5 @@
-import { Link, NavLink, useParams } from "react-router-dom";
-import { useState } from "react";
+import { Link, NavLink, useParams, useNavigate } from "react-router-dom";
+import { useState, useEffect } from "react";
 import logo from "../assets/logo-pack/logo-small.svg";
 import svg from "../assets/logo-pack/CodeAntAI.svg";
 import logIcon from "../assets/icon-pack/log-out.svg";
@@ -12,27 +12,36 @@ const SideBarMenu = () => {
 
   const [menu, setMenu] = useState(MenuData);
 
+  const navigate = useNavigate();
+  useEffect(() => {
+    if (window.location.reload) {
+      navigate(`/${parm.signin}/${parm.id}/`, { state: `${parm.id}` });
+    }
+  }, [1]);
+
   const handleClick = (id) => {
     setMenu((prevOptions) =>
       prevOptions.map((option) =>
         option.id === id
-          ? { ...option, active: true }
+          ? { ...option, active: !option.active }
           : { ...option, active: false }
       )
     );
   };
 
+  window.history.forward();
+
   return (
-    <div className="max-w-2xl md:max-w-60 flex flex-col justify-start md:justify-between py-6 px-4 bg-white">
-      <div className="max-w-60 w-full flex gap-2 flex-col justify-center">
-        <div className="flex-center w-full gap-2">
-          <img src={logo} alt="logo" />
-          <img className="h-4 md:h-6" src={svg} alt="" />
-        </div>
-        <select className="my-4 p-2 overflow-x-clip max-w-60 md:w-full" >
+    <div className="max-w-2xl relative md:fixed md:max-w-60 flex flex-col justify-start md:justify-between py-6 px-4 bg-white">
+      <div className="flex-center w-full gap-2">
+        <img src={logo} alt="logo" />
+        <img className="h-4 md:h-6" src={svg} alt="" />
+      </div>
+      <div className="max-w-60 w-full hidden md:flex gap-2 flex-col justify-center">
+        <select className="my-4 p-2 overflow-x-clip max-w-60 md:w-full">
           <option className="">{parm.id}</option>
         </select>
-        <div className="w-full min-h-56 flex flex-col h-full md:h-[440px] bg-white relative ">
+        <div className="w-full flex flex-col h-full md:h-[440px] bg-white relative ">
           {menu.map((op) => (
             <NavLink
               key={op.id}
@@ -42,29 +51,33 @@ const SideBarMenu = () => {
               <div
                 onClick={() => handleClick(op.id)}
                 className={`h-10 max-w-60 w-full px-3 py-2 rounded-xl flex-center justify-start gap-3 ${
-                  op.active ? "bg-blue-800 text-white":"bg-transparent text-black"}`}>
+                  op.active
+                    ? "bg-blue-800 text-white"
+                    : "bg-transparent text-black"
+                }`}
+              >
                 <SVG path={op.path} color={op.active ? "#fff" : "#414651"} />
                 <p>{op.title}</p>
               </div>
             </NavLink>
           ))}
-        <div className="static md:absolute md:bottom-2 w-full">
-          <Link
-            to={`/${parm.signin}/${parm.id}/support`}
-            state={parm.id}
-            className="h-10 max-w-52 w-full px-4 flex-center justify-start gap-3 rounded-lg hover:bg-green-400 hover:text-white"
-          >
-            <img src={callIcon} alt="call" />
-            <p>Support</p>
-          </Link>
-          <Link
-            to={"/"}
-            className="h-10 max-w-52 w-full flex-center justify-start gap-3 px-4 hover:bg-red-400 hover:text-white rounded-lg"
-          >
-            <img src={logIcon} alt="" />
-            <p>Log Out</p>
-          </Link>
-        </div>
+          <div className="static md:absolute md:bottom-2 w-full">
+            <Link
+              to={`/${parm.signin}/${parm.id}/support`}
+              state={parm.id}
+              className="h-10 max-w-52 w-full px-4 flex-center justify-start gap-3 rounded-lg hover:bg-green-400 hover:text-white"
+            >
+              <img src={callIcon} alt="call" />
+              <p>Support</p>
+            </Link>
+            <Link
+              to={"/"}
+              className="h-10 max-w-52 w-full flex-center justify-start gap-3 px-4 hover:bg-red-400 hover:text-white rounded-lg"
+            >
+              <img src={logIcon} alt="" />
+              <p>Log Out</p>
+            </Link>
+          </div>
         </div>
       </div>
     </div>

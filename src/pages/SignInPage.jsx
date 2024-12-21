@@ -4,7 +4,7 @@ import SignInTab from '../components/SignInTab'
 
 
 const SignInPage = () => {
-    window.history.forward(SignInPage)
+    // window.history.forward()
     localStorage.clear();
     return (
         <div className='flex w-screen gap-1 min-h-screen mx-auto'>
