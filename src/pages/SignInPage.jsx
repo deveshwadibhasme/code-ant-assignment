@@ -1,10 +1,11 @@
 import React from 'react'
 import SignInDash from '../components/SignInDash'
 import SignInTab from '../components/SignInTab'
-import MainScreen from './MainScreen'
 
-const SignInPage = () => {   
-    localStorage.clear()
+
+const SignInPage = () => {
+    window.history.forward(SignInPage)
+    localStorage.clear();
     return (
         <div className='flex w-screen gap-1 min-h-screen mx-auto'>
             <SignInDash />

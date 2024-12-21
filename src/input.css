@@ -18,3 +18,9 @@
     @apply bg-blue-900 h-full absolute top-0 w-[50%] transition-all rounded-xl z-0 right-1/2;
   }
 }
+
+@layer utilities {
+  .bg-blue-800{
+    background-color:#1570EF;
+  }
+}
