@@ -1,7 +1,7 @@
 import Refresh from '../assets/icon-pack/refresh.svg'
 import Plus from '../assets/icon-pack/plus.svg'
 
-const AddRepo = ({ addRepo }) => {
+const AddRepo = ({openForm}) => {
     return (
         <div className='w-full flex flex-col md:flex-row justify-between gap-y-4'>
             <h2 className="font-semibold text-2xl">
@@ -15,7 +15,7 @@ const AddRepo = ({ addRepo }) => {
                     Refresh All
                 </button>
                 <button
-                    onClick={addRepo}
+                    onClick={openForm}
                     className="max-w-36 px-3 w-full h-9 bg-blue-500 text-white font-semibold text-sm rounded-lg  hover:bg-slate-400 hover:text-black border-1 border-blue-800 flex-center">
                     <img className="h-4" src={Plus} alt="&#x2B;"/>
                     Add Repository

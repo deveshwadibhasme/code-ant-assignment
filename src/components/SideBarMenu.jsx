@@ -11,13 +11,15 @@ import Cross from "../assets/icon-pack/cross.svg";
 
 const SideBarMenu = () => {
   const parm = useParams();
+
   const navigate = useNavigate();
   useEffect(() => {
     if (window.location.reload) {
       navigate(`/${parm.signin}/${parm.id}/`, { state: `${parm.id}` });
     }
-  }, [1]);
-  window.history.forward();
+  }, []);
+
+  // window.history.forward();
 
   const [click, setClicked] = useState(false);
   const [menu, setMenu] = useState(MenuData);
@@ -70,7 +72,7 @@ const SideBarMenu = () => {
             <Link
               to={`/${parm.signin}/${parm.id}/support`}
               state={parm.id}
-              className="h-10 max-w-52 w-full px-4 flex-center justify-start gap-3 rounded-lg hover:bg-green-400 hover:text-white"
+              className="h-10 w-full md:max-w-52 px-4 flex-center justify-start gap-3 rounded-lg hover:bg-green-400 hover:text-white"
             >
               <img src={callIcon} alt="call" />
               <p>Support</p>

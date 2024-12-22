@@ -12,7 +12,7 @@ const RepositoryList = ({ props }) => {
         </span>
       </div>
       <div className="flex w-full gap-4 items-center h-full">
-        <span className="flex-center gap-2">{majorCode}<img className="align-middle" src={circle} alt="circle"/> </span>
+        <span className="flex-center gap-2 uppercase">{majorCode}<img className="align-middle" src={circle} alt="circle"/> </span>
         <span className="flex-center gap-2"><img className="align-middle" src={stack} alt="stack"/>{size} </span>
       </div>
     </div>
