@@ -1,6 +1,5 @@
-# Project is create with React + Vite
-
-(In Development)
+# Project is create with React + Vite [Live Link is Available]
+(Given UI Developed and Some Functionality is in Develpoment)
 
 - I am using more Frameworks in this site and mentioned here after implements
 - Used Tailwind CSS for styling
