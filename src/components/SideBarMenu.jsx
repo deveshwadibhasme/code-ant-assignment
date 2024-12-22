@@ -1,4 +1,10 @@
-import { Link, NavLink, useParams, useNavigate } from "react-router-dom";
+import {
+  Link,
+  NavLink,
+  useParams,
+  useNavigate,
+  useLocation,
+} from "react-router-dom";
 import { useState, useEffect } from "react";
 import logo from "../assets/logo-pack/logo-small.svg";
 import svg from "../assets/logo-pack/CodeAntAI.svg";
@@ -11,6 +17,7 @@ import Cross from "../assets/icon-pack/cross.svg";
 
 const SideBarMenu = () => {
   const parm = useParams();
+  const loc = useLocation();
 
   const navigate = useNavigate();
   useEffect(() => {
@@ -19,24 +26,12 @@ const SideBarMenu = () => {
     }
   }, []);
 
-  // window.history.forward();
-
   const [click, setClicked] = useState(false);
-  const [menu, setMenu] = useState(MenuData);
+  const activeLink = loc.pathname.split("/")[3];
 
-  const handleClick = (id) => {
-    setMenu((prevOptions) =>
-      prevOptions.map((option) =>
-        option.id === id
-          ? { ...option, active: !option.active }
-          : { ...option, active: false }
-      )
-    );
+  const handleHamMenu = () => {
+    setClicked(!click);
   };
-
-  const handleHamMenu = () =>{
-    setClicked(!click)
-  }
 
   return (
     <div className="max-w-2xl md:max-w-60 relative md:fixed flex flex-row md:flex-col justify-between items-center py-6 px-4 pb-0 md:pb-6 bg-white z-10">
@@ -44,26 +39,35 @@ const SideBarMenu = () => {
         <img src={logo} alt="logo" />
         <img className="h-4 md:h-6" src={svg} alt="" />
       </div>
-      <div className={`max-w-xl md:max-w-60 w-full absolute ${ !click ? 'bottom-full' : 'top-16'} left-0 bg-white md:relative flex gap-2 flex-col justify-center z-0 transition-all duration-500`}>
+      <div
+        className={`max-w-xl md:max-w-60 w-full absolute ${
+          !click
+            ? "bottom-full opacity-0 md:opacity-100"
+            : "top-16 opacity-100 md:opacity-0"
+        } left-0 bg-white md:relative flex gap-2 flex-col justify-center z-0 transition-opacity ease-linear duration-300`}
+      >
         <select className="my-0 md:my-4 p-2 w-[90%] mx-auto rounded-xl md:w-full border-1 border-slate-300">
           <option className="">{parm.id}</option>
         </select>
         <div className="w-full flex flex-col h-full md:h-[440px] bg-white relative">
-          {menu.map((op) => (
+          {MenuData.map((op) => (
             <NavLink
               key={op.id}
               to={`/${parm.signin}/${parm.id}/${op.link}`}
               state={parm.id}
             >
               <div
-                onClick={() => handleClick(op.id)}
-                className={`h-10 w-full md:max-w-60 px-3 py-2 rounded-sm md:rounded-xl flex-center justify-start gap-3 ${
-                  op.active
-                    ? "bg-blue-800 text-white"
-                    : "bg-transparent text-black"
-                }`}
+                className={`h-10 w-full md:max-w-60 px-3 py-2 rounded-sm md:rounded-xl flex-center justify-start gap-3 
+                  ${
+                    op.link === activeLink
+                      ? "bg-blue-800 text-white"
+                      : "bg-transparent text-black"
+                  }`}
               >
-                <SVG path={op.path} color={op.active ? "#fff" : "#414651"} />
+                <SVG
+                  path={op.path}
+                  color={op.link === activeLink ? "#fff" : "#414651"}
+                />
                 <p>{op.title}</p>
               </div>
             </NavLink>
@@ -72,7 +76,11 @@ const SideBarMenu = () => {
             <Link
               to={`/${parm.signin}/${parm.id}/support`}
               state={parm.id}
-              className="h-10 w-full md:max-w-52 px-4 flex-center justify-start gap-3 rounded-lg hover:bg-green-400 hover:text-white"
+              className={`h-10 w-full md:max-w-52 px-4 flex-center justify-start gap-3 rounded-lg ${
+                "support" === activeLink
+                  ? "bg-green-400 text-white"
+                  : "bg-transparent text-black"
+              }`}
             >
               <img src={callIcon} alt="call" />
               <p>Support</p>

@@ -976,6 +976,11 @@ video {
   background-color: rgb(30 64 175 / var(--tw-bg-opacity, 1));
 }
 
+.bg-green-400 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(74 222 128 / var(--tw-bg-opacity, 1));
+}
+
 .bg-slate-200 {
   --tw-bg-opacity: 1;
   background-color: rgb(226 232 240 / var(--tw-bg-opacity, 1));
@@ -1132,10 +1137,6 @@ video {
   text-transform: uppercase;
 }
 
-.capitalize {
-  text-transform: capitalize;
-}
-
 .text-black {
   --tw-text-opacity: 1;
   color: rgb(0 0 0 / var(--tw-text-opacity, 1));
@@ -1169,6 +1170,14 @@ video {
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity, 1));
+}
+
+.opacity-0 {
+  opacity: 0;
+}
+
+.opacity-100 {
+  opacity: 1;
 }
 
 .shadow-\[0px_0px_24px\] {
@@ -1239,8 +1248,8 @@ video {
   transition-duration: 150ms;
 }
 
-.transition-all {
-  transition-property: all;
+.transition-opacity {
+  transition-property: opacity;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
 }
@@ -1249,27 +1258,43 @@ video {
   transition-duration: 200ms;
 }
 
-.duration-500 {
-  transition-duration: 500ms;
+.duration-300 {
+  transition-duration: 300ms;
 }
 
-.bg-blue-800{
-  background-color:#1570EF;
+.ease-linear {
+  transition-timing-function: linear;
+}
+
+.bg-blue-800 {
+  background-color: #1570ef;
+}
+
+.bg-green-400{
+  background-color:rgb(74 222 128)
 }
 
 /* responsive */
 
-.bottom-full{
-  bottom:100%;
+.bottom-full {
+  bottom: 100%;
 }
 
-.top-16{
-  top:64px;
+.top-16 {
+  top: 64px;
+}
+
+.opacity-0{
+  opacity:0;
+}
+
+.opacity-100{
+  opacity:1;
 }
 
 @layer {
-  #root{
-    overflow-x: hidden
+  #root {
+    overflow-x: hidden;
   }
 
   .flex-center {
@@ -1328,11 +1353,6 @@ video {
 .hover\:bg-green-300:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(134 239 172 / var(--tw-bg-opacity, 1));
-}
-
-.hover\:bg-green-400:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(74 222 128 / var(--tw-bg-opacity, 1));
 }
 
 .hover\:bg-red-400:hover {
@@ -1462,5 +1482,21 @@ video {
 
   .md\:pb-6 {
     padding-bottom: 1.5rem;
+  }
+
+  .md\:opacity-0 {
+    opacity: 0;
+  }
+
+  .md\:opacity-100 {
+    opacity: 1;
+  }
+
+  .md\:opacity-0{
+    opacity:0;
+  }
+
+  .md\:opacity-100{
+    opacity:1;
   }
 }

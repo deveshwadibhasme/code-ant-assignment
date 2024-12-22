@@ -3,8 +3,8 @@
 @tailwind utilities;
 
 @layer {
-  #root{
-    overflow-x: hidden
+  #root {
+    overflow-x: hidden;
   }
   .flex-center {
     @apply flex justify-center items-center;
@@ -23,14 +23,23 @@
 }
 
 @layer utilities {
-  .bg-blue-800{
-    background-color:#1570EF;
+  .bg-blue-800 {
+    background-color: #1570ef;
   }
-    /* responsive */
-    .bottom-full{
-      bottom:100%;
-    }
-    .top-16{
-      top:64px;
-    }
+  .bg-green-400{
+    background-color:rgb(74 222 128)
+  }
+  /* responsive */
+  .bottom-full {
+    bottom: 100%;
+  }
+  .top-16 {
+    top: 64px;
+  }
+  .opacity-0{
+    opacity:0;
+  }
+  .opacity-100{
+    opacity:1;
+  }
 }
