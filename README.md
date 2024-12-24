@@ -4,6 +4,8 @@
 - I will use more Frameworks in future in this site and mentioned here after implement
 
 - Used Tailwind CSS for styling
+  
+- [Video For Reference](https://www.linkedin.com/posts/devesh-wadibhasme-220b662ab_reactjs-tailwindcss-assigment-activity-7276882515984863232-WYrT)
 
 - Live Link : https://codeant-ai.netlify.app/
 
