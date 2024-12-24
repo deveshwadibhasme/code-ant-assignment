@@ -1,11 +1,18 @@
 # Project is create with React + Vite [Live Link is Available]
 (Given UI Developed and Some Functionality is in Develpoment)
 
-- I am using more Frameworks in this site and mentioned here after implement
+- I will use more Frameworks in future in this site and mentioned here after implement
 
 - Used Tailwind CSS for styling
 
 - Live Link : https://codeant-ai.netlify.app/
+
+## Feature
+
+- Log in Page
+- A Dashboard Page
+- A Add Repository Option
+
 
 ## Run the app locally with 4 simple steps:
 ## Prerequisites
