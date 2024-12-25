@@ -18,7 +18,7 @@ const routes = createBrowserRouter([
     errorElement: <ErrorPage />,
     children: [
       {
-        path: "/:signin/:repo",
+        path: "/:signin/repository",
         element: <MainScreen />,
       },
       {
