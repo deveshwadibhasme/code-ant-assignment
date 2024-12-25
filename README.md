@@ -7,7 +7,7 @@
   
 - [Video For Reference](https://www.linkedin.com/posts/devesh-wadibhasme-220b662ab_reactjs-tailwindcss-assigment-activity-7276882515984863232-WYrT)
 
-- Live Link : https://codeant-ai.netlify.app/
+- Live Link : https://codeant-ai.netlify.app/ [ Run It Locally is Good Practice because netlify has some limitations and routes error]
 
 ## Feature
 
