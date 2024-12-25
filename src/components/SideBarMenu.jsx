@@ -1,10 +1,4 @@
-import {
-  Link,
-  NavLink,
-  useParams,
-  useNavigate,
-  useLocation,
-} from "react-router-dom";
+import { Link, NavLink, useParams, useNavigate, useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
 import logo from "../assets/logo-pack/logo-small.svg";
 import svg from "../assets/logo-pack/CodeAntAI.svg";
@@ -17,24 +11,27 @@ import Cross from "../assets/icon-pack/cross.svg";
 
 const SideBarMenu = () => {
   const parm = useParams();
-  const loc = useLocation();
 
+  // After Click Log In this function helps to serve repository page directly without click
+  const loc = useLocation();
   const navigate = useNavigate();
   useEffect(() => {
     if (window.location.reload) {
-      navigate(`/${parm.signin}/${parm.id}/`, { state: `${parm.id}` });
+      navigate(`/${parm.signin}/${parm.id}/repository`, { state: `${parm.id}` });
+      console.log('repository reloaded');
     }
   }, []);
 
+
+  // Handle the menu click event
   const [click, setClicked] = useState(false);
   const activeLink = loc.pathname.split("/")[3];
-
   const handleHamMenu = () => {
     setClicked(!click);
   };
 
   return (
-    <div className="max-w-2xl md:max-w-60 relative md:fixed flex flex-row md:flex-col justify-between items-center py-6 px-4 pb-0 md:pb-6 bg-white z-10">
+    <div className="max-w-2xl  md:max-w-60 relative md:fixed flex flex-row md:flex-col justify-between items-center py-6 px-4 pb-0 md:pb-6 bg-white z-20">
       <div className="flex-center w-[40%] md:w-full gap-2">
         <img src={logo} alt="logo" />
         <img className="h-4 md:h-6" src={svg} alt="" />

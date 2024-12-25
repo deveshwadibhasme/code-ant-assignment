@@ -11,12 +11,12 @@ const PushRepoForm = ({ openForm, setNewRepo }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setTimeout(openForm, 1000);
+    setTimeout(openForm, 500);
     setNewRepo((preState) => [...preState, allInput]);
   };
 
   return (
-    <div className="absolute top-0 left-0 bg-white w-full h-full md:min-h-[550px] z-20 p-2 shadow-sm shadow-black">
+    <div className="absolute  top-0 left-0 bg-white w-full h-full md:min-h-[550px] z-10 p-2 shadow-sm shadow-black">
       <form
         onSubmit={handleSubmit}
         className="bg-white rounded w-full h-screen max-w-md absolute top-3 "
@@ -108,12 +108,18 @@ const PushRepoForm = ({ openForm, setNewRepo }) => {
           />
         </div>
 
-        {/* Submit Button */}
         <button
           type="submit"
-          className="w-full bg-blue-500 text-white py-2 rounded-lg hover:bg-blue-600 transition duration-200"
+          className="w-full bg-blue-500 text-white py-2 rounded-lg hover:bg-blue-600 transition duration-200 mb-2"
         >
           Add Repository
+        </button>
+        <button
+          type="reset"
+          onClick={()=>setTimeout(openForm, 500)}
+          className="w-full bg-red-500 text-white py-2 rounded-lg hover:bg-red-600 transition duration-200"
+        >
+          Cancle
         </button>
       </form>
       <div>Here You can upload Repository</div>
