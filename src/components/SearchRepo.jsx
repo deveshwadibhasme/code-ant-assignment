@@ -9,6 +9,7 @@ const SearchRepo = ({ value }) => {
         className="w-full h-full p-3 rounded-lg outline-none"
         type="text"
         placeholder="Search Repositories"
+        title="disabled"
       />
     </div>
   );

@@ -10,22 +10,22 @@ import HamMenu from "../assets/icon-pack/bars.svg";
 import Cross from "../assets/icon-pack/cross.svg";
 
 const SideBarMenu = () => {
-  const parm = useParams();
+  const  parm = useParams();
 
   // After Click Log In this function helps to serve repository page directly without click
-  const loc = useLocation();
   const navigate = useNavigate();
   useEffect(() => {
     if (window.location.reload) {
-      navigate(`/${parm.signin}/${parm.id}/repository`, { state: `${parm.id}` });
+      navigate(`/${parm.signin}/repository`);
       console.log('repository reloaded');
     }
   }, []);
-
-
+  
+  
   // Handle the menu click event
+  const loc = useLocation();
   const [click, setClicked] = useState(false);
-  const activeLink = loc.pathname.split("/")[3];
+  const activeLink = loc.pathname.split("/")[2];
   const handleHamMenu = () => {
     setClicked(!click);
   };
@@ -44,13 +44,13 @@ const SideBarMenu = () => {
         } left-0 bg-white md:relative flex gap-2 flex-col justify-center z-0 transition-opacity ease-linear duration-300`}
       >
         <select className="my-0 md:my-4 p-2 w-[90%] mx-auto rounded-xl md:w-full border-1 border-slate-300">
-          <option className="">{parm.id}</option>
+          <option className="">Devesh Wadibhasme | {(parm.signin).split('-')[2]}</option>
         </select>
         <div className="w-full flex flex-col h-full md:h-[440px] bg-white relative">
           {MenuData.map((op) => (
             <NavLink
               key={op.id}
-              to={`/${parm.signin}/${parm.id}/${op.link}`}
+              to={`/${parm.signin}/${op.link}`}
               state={parm.id}
             >
               <div
@@ -71,7 +71,7 @@ const SideBarMenu = () => {
           ))}
           <div className="static md:absolute md:bottom-2 w-full">
             <Link
-              to={`/${parm.signin}/${parm.id}/support`}
+              to={`/${parm.signin}/support`}
               state={parm.id}
               className={`h-10 w-full md:max-w-52 px-4 flex-center justify-start gap-3 rounded-lg ${
                 "support" === activeLink

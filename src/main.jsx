@@ -13,42 +13,42 @@ const routes = createBrowserRouter([
     errorElement: <ErrorPage />,
   },
   {
-    path: "/:signin/:id/",
+    path: "/:signin/",
     element: <App />,
     errorElement: <ErrorPage />,
     children: [
       {
-        path: "/:signin/:id/:repo",
+        path: "/:signin/:repo",
         element: <MainScreen />,
       },
       {
-        path: "/:signin/:id/AICodeReviewer",
+        path: "/:signin/AICodeReviewer",
         element: <h1 className="text-center">AI Code Reviewer</h1>,
       },
       {
-        path: "/:signin/:id/CloudSecurity",
+        path: "/:signin/CloudSecurity",
         element: <h1 className="text-center">Cloud Security</h1>,
       },
       {
-        path: "/:signin/:id/howtouse",
+        path: "/:signin/howtouse",
         element: <h1 className="text-center">How to Use</h1>,
       },
       {
-        path: "/:signin/:id/settings",
+        path: "/:signin/settings",
         element: <h1 className="text-center">Settings</h1>,
       },
       {
-        path: "/:signin/:id/support",
+        path: "/:signin/support",
         element: <h1 className="text-center">Support</h1>,
       },
       {
-        path: "/:signin/:id//*",
+        path: "/:signin/*",
         element: <ErrorPage />,
       },
     ],
   },
   {
-    path: "/*",
+    path: "*",
     element: <ErrorPage />,
   },
 ]);
