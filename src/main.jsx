@@ -48,7 +48,7 @@ const routes = createBrowserRouter([
     ],
   },
   {
-    path: "*",
+    path: "/*",
     element: <ErrorPage />,
   },
 ]);
