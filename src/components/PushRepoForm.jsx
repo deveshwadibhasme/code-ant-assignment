@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
+import { OpenFormContext } from "../contexts/openForm";
 
-const PushRepoForm = ({ openForm, setNewRepo }) => {
+const PushRepoForm = ({ setNewRepo }) => {
   const [allInput, setAllInput] = useState({
     id: crypto.randomUUID(),
     repoName: "",
@@ -9,9 +10,11 @@ const PushRepoForm = ({ openForm, setNewRepo }) => {
     size: "",
   });
 
+  const {1:toggleForm} = useContext(OpenFormContext);
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    setTimeout(openForm, 500);
+    setTimeout(toggleForm, 500);
     setNewRepo((preState) => [...preState, allInput]);
   };
 
@@ -116,7 +119,7 @@ const PushRepoForm = ({ openForm, setNewRepo }) => {
         </button>
         <button
           type="reset"
-          onClick={()=>setTimeout(openForm, 500)}
+          onClick={()=>setTimeout(toggleForm, 500)}
           className="w-full bg-red-500 text-white py-2 rounded-lg hover:bg-red-600 transition duration-200"
         >
           Cancle
