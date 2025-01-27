@@ -32,14 +32,6 @@ const Repository = [
         "htmlUrl": "https://github.com/deveshwadibhasme/checkSlot"
     },
     {
-        "repoName": "code-ant-assignment",
-        "size": 244,
-        "visibility": "public",
-        "majorCode": "JavaScript",
-        "id": 905875057,
-        "htmlUrl": "https://github.com/deveshwadibhasme/code-ant-assignment"
-    },
-    {
         "repoName": "country-api",
         "size": 79,
         "visibility": "public",
@@ -192,12 +184,12 @@ const Repository = [
         "htmlUrl": "https://github.com/deveshwadibhasme/temp-converter"
     },
     {
-        "repoName": "todo",
-        "size": 50,
+        "repoName": "code-ant-assignment",
+        "size": 244,
         "visibility": "public",
-        "majorCode": "CSS",
-        "id": 858911807,
-        "htmlUrl": "https://github.com/deveshwadibhasme/todo"
+        "majorCode": "JavaScript",
+        "id": 905875057,
+        "htmlUrl": "https://github.com/deveshwadibhasme/code-ant-assignment"
     },
     {
         "repoName": "todo-react",
